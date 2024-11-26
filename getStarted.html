@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <script src="./assets/js/color-modes.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Effortless file management and enhanced patient care system." />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Hugo 0.122.0" />
+  <title>Healthcare System</title>
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color: white; color: black; font-family: Arial, sans-serif;">
+
+  <div style="background-color: #4FA1A7;">
+    <header class="d-flex flex-wrap justify-content-center mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="images/logoWhite.png" class="bi me-2" width="80" height="80" alt="Logo" />
+      </a>
+      <ul class="nav nav-pills align-items-center">
+        <li class="nav-item"><a href="index.html" class="nav-link text-black">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-black">About Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-black">Register</a></li>
+        <li class="nav-item"><a href="index.html" class="btn btn-primary" aria-current="page">Registered Member</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <div class="d-flex justify-content-center align-items-center" style="color:black; font-family: Arial, sans-serif; height: 45vh;">
+    <form onsubmit="getQueNumber(); return false;">
+      <h5>Enter Your File Number</h5>
+      <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+        <label for="file" class="visually-hidden">File Number</label>
+        <input id="file" type="text" class="form-control" placeholder="File Number" required>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+      <p id="welcomeMessage" style="margin-top: 1rem; color: green; border: 2px solid #4FA1A7; padding: 10px; border-radius: 5px; background-color: #f0f8f8; display: none;"></p> <!-- Message display -->
+    </form>
+  </div>
+
+  <div style="width: 100%; overflow: hidden;">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 p-5 mt-5 border-top" style="background-color: #4FA1A7;">
+      <div class="col pb-3 px-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <img src="images/logoWhite.png" class="bi" width="80" height="80" alt="Footer Logo"/>
+        </a>
+        <p class="text-black">&copy; Effortless File Management, Enhanced Patient Care</p>
+      </div>
+      <div class="col mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-black">About Us</a></li>
+          <li class="nav-item mb-2"><a href="FAQs.html" class="nav-link p-0 text-black">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="privacy.html" class="nav-link p-0 text-black">Privacy Policy</a></li>
+          <li class="nav-item mb-2"><a href="patient'sRights.html" class="nav-link p-0 text-black">Patient's Rights</a></li>
+          <li class="nav-item mb-2"><a href="termsCondition.html" class="nav-link p-0 text-black">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 offset-md-1 mb-3">
+        <form>
+          <h5>Please give us Feedback</h5>
+          <div class="d-flex flex-column flex-sm-row">
+            <button class="btn btn-primary" type="button">Feedback/Support</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function getQueNumber() {
+      const fileNumber = document.getElementById("file").value;
+      const welcomeMessage = document.getElementById("welcomeMessage");
+
+      if (fileNumber) {
+        welcomeMessage.textContent = `The user ${fileNumber}, welcome back! Your queue number is ${Math.floor(Math.random() * 100) + 1}.`;
+        welcomeMessage.style.display = "block"; // Show the message box
+      } else {
+        welcomeMessage.textContent = "Please enter your file number.";
+        welcomeMessage.style.display = "block"; // Show the message box
+      }
+    }
+  </script>
+</body>
+</html>
