@@ -1,0 +1,69 @@
+.logo2{
+    margin-left: 650px;
+    margin-top: 40px;
+}
+.location{
+    margin-left: 600px;
+    font-size: 25px;
+    margin-top: 50px;
+}
+.heading{
+    text-align: center;
+}
+
+/* TV Show Grid */
+.show-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.show-card {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.show-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.show-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+    margin-left: 600px;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+/* Slide show*/
+.show-grid {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+  }
+  
+  .show-card {
+    flex: 0 0 auto;
+    width: 200px; /* Set width as per your images */
+    margin-right: 10px; /* Space between cards */
+    animation: slide-left 15s linear infinite;
+  }
+  
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .show-grid:hover .show-card {
+    animation-play-state: paused;
+  }
+  
