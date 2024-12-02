@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #004d4d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .logo {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #003d3d;
+}
+
+.sidebar .logo p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.sidebar nav ul li a.active {
+  font-weight: bold;
+}
+
+.sidebar .footer-logo {
+  padding: 20px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #80d4d4;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  position: relative;
+}
+
+.stat-card i {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+/* Tables */
+.data-tables {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.table-container {
+  flex: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #4FA1A7;
+  color: white;
+}
+
+.status.admitted {
+  color: green;
+}
+
+.status.on-hold {
+  color: orange;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  padding: 20px;
+  background: #4FA1A7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  color: #80d4d4;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+footer button {
+  background: white;
+  color: #4FA1A7;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="icon-user"></i>
+      <p>Admin</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active" style="color: black;">Dashboard</a></li>
+        <li><a href="#">Patient Profiles</a></li>
+        <li><a href="#">List of Profiles</a></li>
+        <li><a href="#">Nurses</a></li>
+        <li><a href="#">Create</a></li>
+        <li><a href="#">Update</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+    
+      <p></p>
+    </div>
+  </aside>
+
+ 
+        
+    
+    <div style="width: 100%; overflow: hidden;">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 p-5 mt-5 border-top" style="background-color: #4FA1A7;">
+          <div class="col pb-3 px-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+              <img src="images/logoWhite.png" class="bi" width="80" height="80"/>
+            </a>
+            <p class="text-black">&copy; “Effortless File Management,
+                Enhanced Patient Care“</p>
+          </div>
+      
+      
+          <div class="col mb-3">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-black" >About Us</a></li>
+              <li class="nav-item mb-2"><a href="FAQs.html" class="nav-link p-0 text-black">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="privacy.html" class="nav-link p-0 text-black">Privacy Policy</a></li>
+              <li class="nav-item mb-2"><a href="patient'sRights.html" class="nav-link p-0 text-black">Patient's Rights</a></li>
+              <li class="nav-item mb-2"><a href="termsCondition.html" class="nav-link p-0 text-black">Terms and Conditions</a></li>
+            </ul>
+          </div>
+      
+          
+          <div class="col-md-3 offset-md-1 mb-3">
+            <form>
+              <h5>Please give us the Feedback</h5>
+              <div class="d-flex flex-column flex-sm-row">
+               
+                <button class="btn btn-primary" type="button">Feedback/Support</button>
+              </div>
+            </form>
+          </div>
+
+        </footer>
+      </div>
+
+      
+  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+            document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.querySelector(".show-grid");
+
+      // Clone the content for infinite loop effect
+      const clone = grid.innerHTML;
+      grid.innerHTML += clone;
+    });
+
+  </script>
+  </main>
+</body>
+</html>
