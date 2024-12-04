@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
   <style>
-    /* General Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +18,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
   height: 100vh;
   background-color: #f4f4f9;
 }
@@ -29,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 620px;
 }
 
 .sidebar .logo {
@@ -48,7 +50,8 @@ body {
 }
 
 .sidebar nav ul li {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+  margin-left: 25px;
 }
 
 .sidebar nav ul li a {
@@ -68,78 +71,11 @@ body {
   color: #80d4d4;
 }
 
-/* Main Content */
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
 
-header h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.statistics {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.stat-card {
-  background: #e6e6e6;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  width: 200px;
-  position: relative;
-}
-
-.stat-card i {
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-/* Tables */
-.data-tables {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.table-container {
-  flex: 1;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-table th {
-  background-color: #4FA1A7;
-  color: white;
-}
-
-.status.admitted {
-  color: green;
-}
-
-.status.on-hold {
-  color: orange;
-}
 
 /* Footer */
 footer {
-  margin-top: 20px;
+  
   padding: 20px;
   background: #4FA1A7;
   color: white;
@@ -153,6 +89,7 @@ footer a {
   margin-right: 15px;
 }
 
+
 footer button {
   background: white;
   color: #4FA1A7;
@@ -161,35 +98,117 @@ footer button {
   border-radius: 5px;
   cursor: pointer;
 }
+.horizontal{
+  display: flex;
+}
+.nurse-nav nav ul{
+  margin-top: -40px;
+}
+.heading{
+  margin-top: 100px;
+  margin-left: 400px;
+}
+table {
+            width: 600px;
+            height: 200px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4FA1A7;
+            color: white;
+        }
+        .table{
+          margin-left: 200px;
+          margin-top: 60px;
+        }
+        .lightgrey{
+          background-color: lightgrey;
+          width: 1005px;
+          height: 80px;
+        }
 
   </style>
 </head>
 <body>
+  <div class="horizontal">
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="logo">
-      <i class="icon-user"></i>
-      <p>Admin</p>
-    </div>
+  <div class="logo">
+  <img src="nurse.jpg" alt =nurseIcon>
+   <p>Nurse Dashboard</p>
+   </div>
+   <div class="nurse-nav">
     <nav>
       <ul>
-        <li><a href="#" class="active" style="color: black;">Dashboard</a></li>
-        <li><a href="#">Patient Profiles</a></li>
-        <li><a href="#">List of Profiles</a></li>
-        <li><a href="#">Nurses</a></li>
-        <li><a href="#">Create</a></li>
+        <li><a href="#" class="active" style="color: white;">Dashboard</a></li>
+        <li><a href="#">Patient Files</a></li>
+        <li><a href="#">Medical Records</a></li>
+        <li><a href="#">Patient Status</a></li>
         <li><a href="#">Update</a></li>
         <li><a href="#">Logout</a></li>
       </ul>
     </nav>
-    
-      <p></p>
-    </div>
+  </div>
   </aside>
+  
+  
+<div class="nurse-tables">
+  <div class="lightgrey">
+    <img src="">
+    </div>
+<div class="heading"><h2>Nurse Dashboard</h2></div>
+<div class="table">
+<table>
+  <thead>
+      <tr>
+          <th>Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>View Profile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>John</td>
+          <td>Doe</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Jane</td>
+          <td>Smith</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Michael</td>
+          <td>Brown</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Emily</td>
+          <td>Davis</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
 
  
         
-    
+    <!--Footer-->
     <div style="width: 100%; overflow: hidden;">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 p-5 mt-5 border-top" style="background-color: #4FA1A7;">
           <div class="col pb-3 px-3">
@@ -199,6 +218,7 @@ footer button {
             <p class="text-black">&copy; “Effortless File Management,
                 Enhanced Patient Care“</p>
           </div>
+          
       
       
           <div class="col mb-3">
