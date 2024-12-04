@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+  <style>
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #004d4d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 620px;
+}
+
+.sidebar .logo {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #003d3d;
+}
+
+.sidebar .logo p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 35px;
+  margin-left: 25px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.sidebar nav ul li a.active {
+  font-weight: bold;
+}
+
+.sidebar .footer-logo {
+  padding: 20px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #80d4d4;
+}
+
+
+
+/* Footer */
+footer {
+  
+  padding: 20px;
+  background: #4FA1A7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  color: #80d4d4;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+
+footer button {
+  background: white;
+  color: #4FA1A7;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.horizontal{
+  display: flex;
+}
+.nurse-nav nav ul{
+  margin-top: -40px;
+}
+.heading{
+  margin-top: 100px;
+  margin-left: 400px;
+}
+table {
+            width: 600px;
+            height: 200px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4FA1A7;
+            color: white;
+        }
+        .table{
+          margin-left: 200px;
+          margin-top: 60px;
+        }
+        .lightgrey{
+          background-color: lightgrey;
+          width: 1005px;
+          height: 80px;
+        }
+
+  </style>
+</head>
+<body>
+  <div class="horizontal">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+  <div class="logo">
+  <img src="nurse.jpg" alt =nurseIcon>
+   <p>Nurse Dashboard</p>
+   </div>
+
+
+
+
+   
+   <div class="nurse-nav">
+    <nav>
+      <ul>
+        <li><a href="#" class="active" style="color: white;">Dashboard</a></li>
+        <li><a href="#">Patient Files</a></li>
+        <li><a href="#">Medical Records</a></li>
+        <li><a href="#">Patient Status</a></li>
+        <li><a href="#">Update</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+  </aside>
+  
+  
+<div class="nurse-tables">
+  
+<div class="heading"><h2>Nurse Dashboard</h2></div>
+<div class="table">
+<table>
+  <thead>
+      <tr>
+          <th>Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>View Profile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>John</td>
+          <td>Doe</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Jane</td>
+          <td>Smith</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Michael</td>
+          <td>Brown</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Emily</td>
+          <td>Davis</td>
+          <td><a href="#">View Profile</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+ 
+        
+  
+      
+  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+            document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.querySelector(".show-grid");
+
+      // Clone the content for infinite loop effect
+      const clone = grid.innerHTML;
+      grid.innerHTML += clone;
+    });
+
+  </script>
+  </main>
+</body>
+</html>
